@@ -5,18 +5,14 @@
  * @returns {string} A representação binária do número decimal.
  */
 function converterDecimalParaBinario(decimal) {
-    // Caso base: Se o número decimal for 0, sua representação binária é "0".
     if (decimal === 0) {
         return "0";
     }
 
-    // Caso base: Se o número decimal for 1, sua representação binária é "1".
     if (decimal === 1) {
         return "1";
     }
 
-    // Validação para números negativos, embora o input type="number" com min="0" ajude.
-    // Funções recursivas geralmente lidam melhor com domínios bem definidos.
     if (decimal < 0) {
         return "Número inválido (apenas números não-negativos são suportados).";
     }
@@ -46,18 +42,11 @@ convertButton.addEventListener('click', () => {
 
     const result = converterDecimalParaBinario(decimalValue);
     binaryResult.textContent = result;
-    binaryResult.style.color = '#007bff'; // Cor normal de resultado
+    binaryResult.style.color = '#007bff';
 });
 
-// Opcional: Permitir conversão ao pressionar "Enter" no campo de input
 decimalInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-        convertButton.click(); // Simula o clique do botão
+        convertButton.click();
     }
-});
-
-// Opcional: Definir um valor inicial e mostrar o resultado ao carregar a página
-document.addEventListener('DOMContentLoaded', () => {
-    decimalInput.value = 13; // Valor inicial para demonstração
-    convertButton.click(); // Converte automaticamente ao carregar
 });
