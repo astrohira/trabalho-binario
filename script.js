@@ -25,7 +25,6 @@ function converterDecimalParaBinario(decimal) {
     return converterDecimalParaBinario(quociente) + resto.toString();
 }
 
-// Obter referências aos elementos HTML
 const decimalInput = document.getElementById('decimalInput');
 const convertButton = document.getElementById('convertButton');
 const binaryResult = document.getElementById('binaryResult');
